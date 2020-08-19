@@ -56,7 +56,7 @@ console.log(myDog.calcAge());
 //Ok, let's do another one.  We'll create a return of the full name of our pet.
 
 Pet.prototype.getFullName = function(){
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.firstName} ${this.lastName}`; //Notice that 'this' works here because we're traversing down into our heredity or our parents.  In this case, it's 'Pet'. 'Pet' contains keys named 'firstName' and 'lastName'.  
 }
 
 console.log(myDog.getFullName());
