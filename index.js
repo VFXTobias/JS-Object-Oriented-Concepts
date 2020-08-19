@@ -24,7 +24,7 @@ console.log(henry);
 
 //When dealing with objects created via a constructor like our 'Person' above then we are inheriting from the Person.prototype or our constructed object's prototype. We're one generation removed in a sense.
 
-//Think of prototypes like an object's inhereted abilities.  You use them to create methods (aka functions) that do specific things within the context of the object itself.  In our constructor for 'Person' we might decide we want to create some useful methods that do things for us.  So we'd create some nexted 'prototypes' to do the job. Let's try it on a new constructor called 'Pet'.
+//Think of prototypes like an object's inhereted abilities.  You use them to create methods (aka functions) that do specific things within the context of the object itself.  In our constructor for 'Person' we might decide we want to create some useful methods that do things for us.  So we'd create some nested 'prototypes' to do the job. Let's try it on a new constructor called 'Pet'.
 
 
 function Pet(firstName, lastName, dob, breed) {
