@@ -38,7 +38,7 @@ function Pet(firstName, lastName, dob, breed) {
 Pet.prototype.calcAge = function () {
     const date = new Date(); //This just grabs the date and time right now.
     const currYear = date.getFullYear(); //This parses down the previous date to just the year.
-    const birthYear = this.dob.getFullYear(); // This will grab the date of birth (dob) specified just outside of this function but inside the parent function (Person) and parse its full date string down to just the full year.  "this" is the operator that tells this function to look up into our parent scope (Person).
+    const birthYear = this.dob.getFullYear(); // This will grab the date of birth (dob) specified just outside of this function but inside the parent function (Pet) and parse its full date string down to just the full year.  "this" is the operator that tells this function to look up into our parent scope (Pet).
 
     return currYear - birthYear;
 }
