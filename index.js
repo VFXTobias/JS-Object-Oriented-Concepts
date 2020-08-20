@@ -81,7 +81,7 @@ Customer.prototype.greeting = function(){
 
 //Let's test this all out by creating a new Customer.
 
-const scott = new Customer('Scott', 'Vanderburg', '01-15-2001', 'Gamer', '555-555-5555', 'Premium');
+const scott = new Customer('Scott', 'Vanderburg', '01-15-1999', 'Gamer', '555-555-5555', 'Premium');
 
 console.log(scott);
 
@@ -95,3 +95,36 @@ console.log(henry.greeting()); //Henry is a 'Person' object. So his greeting is 
 
 console.log(scott.calcAge());
 
+//**********ES6 Methods of Object Creation - Classes & SubClasses**********
+// The concept behind this method is thought of as "symantec sugar" and essentially boils down to organizing the constructor methodology into a more compartmentalized method.  If you examine the __proto__ result using this approach you will find the end result is virtually identical.
+
+class VideoGame {
+    constructor(gameName, gameStudio, releaseDate){
+        this.gameName = gameName;
+        this.gameStudio = gameStudio;
+        this.releaseDate = new Date(releaseDate);
+    }
+
+    Review(){
+        return `Visit https://www.ign.com/reviews to read a review of ${this.gameName}!`;
+    }
+
+    calcGameAge(){
+        const date = new Date();
+        const currYear = date.getFullYear(); 
+        const releaseYear = this.releaseDate.getFullYear();
+    
+        return ` ${this.gameName} is ${(currYear - releaseYear)} years old.`;
+    }
+        
+}
+
+const witcher3 = new VideoGame('The Witcher 3', "CD Projekt Red", '05-18-2015');
+
+console.log(witcher3);
+
+console.log(witcher3.Review());
+
+console.log(witcher3.calcGameAge());
+
+// As we can see, the above structure is somewhat easier to read, understand, and use.
